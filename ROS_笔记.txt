@@ -1,0 +1,83 @@
+ROS笔记 
+
+1 配置环境
+
+查看环境：export | grep ROS
+初始化ROS的catkin工作空间：catkin_init_workspace 
+编译ROS的catkin工作空间：catkin_make 
+读取当前catkin工作空间的环境变量：source devel/setup.sh 
+验证ROS工作空间的环境变量加载成功：echo $ROS_PACKAGE_PATH
+
+2 文件系统
+
+获取软件包的有关信息：rospack find [包名称]
+直接切换(cd)工作目录到某个软件包或者软件包集当中：roscd [本地包名称[/子目录]]
+罗列目录 ：rosls [本地包名称[/子目录]]
+
+注意：由于rospack、roscd、rosls命令行工具都是针对ROS软件包进行的，所以一定要将要操作的软件包加入到ROS_PACKAGE_PATH变量中。
+
+3 软件包
+
+catkin软件包必要组成：package.xml和CMakeList.txt文件。
+创建catkin软件包：catkin_create_pkg命令创建一个新的catkin软件包。
+编译catkin工作空间：catkin_make命令编译catkin工作空间。
+查看ROS软件包依赖：rospack depends1[] 查看直接依赖，rospack depends[] 查看间接依赖。
+定制catkin软件包：修改文件package.xml和CMakeLists.txt。
+
+注意：软件包命名惯例是—以小写字母开头，只能包含小写字母和数字以及下划线，不符合规则的软件包名称将不能编译通过。
+
+4 ROS节点
+
+列出活跃的节点：rosnode list
+返回节点的信息: rosnode info
+查看节点关系图：rosrun rqt_graph rqt_graph
+运行一个给定软件包中的节点:  rosrun [package_name] [node_name]
+
+5 ROS topics
+
+显示topic1上所发布的数据：rostopic echo topic1 
+列出当前处于激活状态的topic列表：rostopic list -v 
+显示topic1的数据类型：rostopic type topic1 
+显示类型更加详细的信息：rosmsg show type1 
+直接向主题topic1发布数据：rostopic pub [topic1] [msg_type] [args] 
+显示主题topic1上数据的发布速率：rostopic hz [topic1]
+
+6 ROS service
+
+主要分为ROS服务和参数两个部分 
+服务，主要命令工具是rosservice： 
+列出所有服务：rosservice list 
+查看服务类型：rosservice type [service] 
+调用服务：rosservice call [service] [args]
+
+参数，主要命令工具是rosparam： 
+设置参数：rosparam set [param] 
+获得参数：rosparam get [param] 
+写入参数：rosparam dump [filename] [namespace] 
+载入参数：rosparam load [filename] [namespace]
+
+7 使用rqt_console和roslaunch
+
+显示节点的输出信息：rosrun rqt_console rqt_console
+用于设置输出信息的重要性等级：rosrun rqt_logger_level rqt_logger_level
+'''
+rosparam set            设置参数
+rosparam get            获取参数
+rosparam load           从文件读取参数
+rosparam dump           向文件中写入参数
+rosparam delete         删除参数
+rosparam list           列出参数名
+'''
+日志等级说明(高->低)
+Fatal
+Error
+Warn
+Info
+Debug
+'''
+一次性打开在一个launch文件中定义的所有节点：roslaunch [package] [launch.file] [args]
+
+问题：
+实时显示一个发布到某个话题上的数据变化图形  rosrun rqt_plot rqt_plot
+
+里面/turtle1/pose/x   /turtle1/pose/y  /turtle1/pose/theta 图里对应的参数是什么含义
