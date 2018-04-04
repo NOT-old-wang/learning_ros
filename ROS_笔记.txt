@@ -77,6 +77,38 @@ Debug
 '''
 一次性打开在一个launch文件中定义的所有节点：roslaunch [package] [launch.file] [args]
 
+8 ROS msg和srv
+
+修改package.xml文件
+ 确保它包含一下两条语句:<build_depend>message_generation</build_depend>
+                       <run_depend>message_runtime</run_depend>
+修改CMakeist.txt文件
+  1 在find_package函数中加入message_generation依赖
+  2 在catkin_package函数中加入message_runtime依赖
+  3 修改add_message_file函数，添加入自己创建的.msg文件,或者在add_service_file函数中添加入自己创建的srv文件
+  4 确保generate_messages函数被调用运行，去掉注释符号#
+重新编译生成软件包
+
+9 C++编写ROS
+
+1 在一个package中新建src文件夹 可在其中编写C++代码
+2 修改增加CMakeLists.txt 
+3 编译新建节点  catkin_make
+4 可执行文件添加对生成的消息文件的依赖：add_dependencies([file] ${catkin_EXPORTED_TARGETS})
+5 检验创建的节点 roscore  rosrun [package_name] [file]
+
+10 录制与回放数据
+
+1 创建一个bag文件夹  mkdir ~/bag_files  cd ~/bag_files  
+2.1 记录所有的topics   rosbag record -a
+2.2 记录指定的topics   例:ros record -O subset /turtle1/cmd_vel /turtle1/pose
+3 查看bag文件的信息  rosbag info <your bagfile>
+4 回放 rosbag play <your bagfile>        附:-r 2 2倍速度
+
+11 roswtf
+用来编译或者通信之类的问题困扰的时候 ：roswtf
+安装检查 运行时检查
+
 问题：
 实时显示一个发布到某个话题上的数据变化图形  rosrun rqt_plot rqt_plot
 
