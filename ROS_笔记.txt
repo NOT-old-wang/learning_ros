@@ -21,7 +21,7 @@ ROS笔记
 catkin软件包必要组成：package.xml和CMakeList.txt文件。
 创建catkin软件包：catkin_create_pkg命令创建一个新的catkin软件包。
 编译catkin工作空间：catkin_make命令编译catkin工作空间。
-查看ROS软件包依赖：rospack depends1[] 查看直接依赖，rospack depends[] 查看间接依赖。
+查看ROS软件包依赖：rospack depends1[] 查看直接依赖，rospack depends[] 查看间接依赖。   
 定制catkin软件包：修改文件package.xml和CMakeLists.txt。
 
 注意：软件包命名惯例是—以小写字母开头，只能包含小写字母和数字以及下划线，不符合规则的软件包名称将不能编译通过。
@@ -32,6 +32,7 @@ catkin软件包必要组成：package.xml和CMakeList.txt文件。
 返回节点的信息: rosnode info
 查看节点关系图：rosrun rqt_graph rqt_graph
 运行一个给定软件包中的节点:  rosrun [package_name] [node_name]
+启动多个节点：  roslunch 
 
 5 ROS topics
 
@@ -81,7 +82,7 @@ Debug
 
 修改package.xml文件
  确保它包含一下两条语句:<build_depend>message_generation</build_depend>
-                       <run_depend>message_runtime</run_depend>
+                        <run_depend>message_runtime</run_depend>
 修改CMakeist.txt文件
   1 在find_package函数中加入message_generation依赖
   2 在catkin_package函数中加入message_runtime依赖
@@ -102,7 +103,7 @@ Debug
 1 创建一个bag文件夹  mkdir ~/bag_files  cd ~/bag_files  
 2.1 记录所有的topics   rosbag record -a
 2.2 记录指定的topics   例:ros record -O subset /turtle1/cmd_vel /turtle1/pose
-3 查看bag文件的信息  rosbag info <your bagfile>
+3 查看bag文件的信息  rosbag info <your bagfile>        也可以用GUI: rqt_bag
 4 回放 rosbag play <your bagfile>        附:-r 2 2倍速度
 
 11 roswtf
