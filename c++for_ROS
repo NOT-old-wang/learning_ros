@@ -1,0 +1,13 @@
+节点的启动与关闭
+1 调用ros::init()函数来初始化节点    例： ros::init(argc, argv, "my_node_name");
+2 创建ros::NodeHandle实例来启动节点  例： ros::NodeHandle nh;    
+
+argc和argv:解析命令行重映射参数
+node_name:节点名，在ros系统中，节点名必须唯一;如果重名节点被运行，那之前的节点就会自动关闭
+注:初始化节点只是简单地从命令行参数和环境中确定像节点名、名字空间以及重映射。它不会与主节点master交互
+   当第一个节点句柄创建时，它会调用ros::start()，当最后一个节点句柄销毁时，它会调用ros::shutdown()
+
+测试关闭状态  ：一旦ros::ok()返回false，节点就已经被关闭了
+  1  while(ros::ok())
+            { ... }
+  2 使用ros::isShutDown()方法
