@@ -1,0 +1,76 @@
+节点的启动与关闭
+1 调用ros::init()函数来初始化节点    例： ros::init(argc, argv, "my_node_name");
+2 创建ros::NodeHandle实例来启动节点  例： ros::NodeHandle nh;    
+
+argc和argv:解析命令行重映射参数
+node_name:节点名，在ros系统中，节点名必须唯一;如果重名节点被运行，那之前的节点就会自动关闭
+注:初始化节点只是简单地从命令行参数和环境中确定像节点名、名字空间以及重映射。它不会与主节点master交互
+   当第一个节点句柄创建时，它会调用ros::start()，当最后一个节点句柄销毁时，它会调用ros::shutdown()
+
+测试关闭状态  ：一旦ros::ok()返回false，节点就已经被关闭了
+  1  while(ros::ok())   
+            { ... }
+  2 使用ros::isShutDown()方法 
+  //ros::ok()在以下情况下会返回false：
+  1 收到SIGINT信号（ctrl-c）；
+  2 节点网络断开；
+  3 ros::shutdown()函数被调用；
+  4 所有的ros::NodeHandles都已经消失。
+  
+参数的使用
+Commands:  
+    rosparam set        set parameter                 设置参数  
+    rosparam get        get parameter                 获得参数值  
+    rosparam load       load parameters from file     从文件中加载参数到参数服务器  
+    rosparam dump       dump parameters to file       将参数服务器中的参数写入到文件  
+    rosparam delete     delete parameter              删除参数  
+    rosparam list       list parameter names          列出参数服务器中的参数  
+	 
+载入参数 1启动 roscore    2载入 rosparam load param.yaml    3查看 rosparam list
+ bool getParam (const std::string& key, parameter_type& output_value) const 
+ 例： n.getParam("my_param", s);    n.param("my_num", i, 42);
+      n.setParam("my_param", "hello there");
+      n.deleteParam("my_param");
+      if (!n.hasParam("my_param"))
+      {
+        ROS_INFO("No param named 'my_param'");
+      }
+	  n.searchParam("b", param_name)
+在launch中初始化参数
+<launch>
+  <node name="param_demo" pkg="param_demo" type="param_demo" output="screen"> 
+     <param name="string_param" value="from launch file" />
+     <param name="int_param" value="999" />
+  </node>
+</launch>
+注意:似乎不能对全局节点和私有节点的参数同时初始化，所有尽量都使用私有节点来传递参数。 
+用launch文件初始化参数的优势是明显的，可以不查看源程序就可以知道节点用到的参数以及给定的初始值，并且找到一个合适的参数后，可以将它保存到launch文件而不必修改和重新编译源程序。	  
+
+	
+NodeHandle不允许直接将私有名称传递给它的方法，也不允许将NodeHandle作为参数的构造方法
+解决方法：ros :: NodeHandle  nh1（“ ~”）;  //必须在main()
+          ROS :: NodeHandle  NH 2（“ ~FOO ”）;
+		  
+(单线程)ros::spinOnce() 和ros::spin()的区别
+	ROS监视器和你订阅的topic链接，消息到达时,他会把消息加入到队列中，但不会立即处理消息。
+	在读到ros::spin()之后ros才开始执行回调函数。
+	而spinOnce 是指调用一次回调函数，spin则不停的调用回调函数，直到node被关闭的时候才会停止。
+(多线程)
+	ros::MultiThreadedSpiner     例：ros::MultiThreadedSpinner spinner(4); // Use 4 threads
+	                                 spinner.spin(); // spin() will not return until the node has been shutdown
+
+定时器 
+  创建：ros::NodeHandle::createTimer()
+        ros::Timer ros::NodeHandle::createTimer(ros::Duration period, <callback>, bool oneshot = false);
+        period:定义了定时器回调函数调用间隔,ros::Duration(0.1)定义了一个匿名类作为period参数,表示每隔0.1s调用一次定时器回调函数
+		<callback>:定时器回调函数,可以是一般函数,类成员方法,仿函数对象等等
+		oneshot:确定该定时器是一次性定时还是持续调用
+  通过ros::Rate 和 r.sleep函数配对实现
+
+日志： #include<ros/console.h>  
+	  ROS_DEBUG(...); ROS_DEBUG_STREAM(args);//这会输出到一个名叫ros.pkg_name的文件
+	  ROS_DEBUG_NAMED("m_name",...); ROS_DEBUG_STREAM_NAMED("m_name",args);//这会输出到一个名叫ros.pkg_name.m_name的文件
+  
+  
+  
+  

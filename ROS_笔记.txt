@@ -143,7 +143,44 @@ sudo update-rc.d launch defaults 95    |  sudo update-rc.d -f launch remove
   重启网络： sudo /etc/init.d/networking restart
 实现电脑之间的通信 
   装上chrony包，实现时间同步：sudo apt-get install chrony
+
+package.xml的编写:程序包的描述文件
+例:
+<package format="2">
+  <name>node_example</name>
+  <version>0.0.1</version>
+  <description>
+    Example.
+  </description>
+  <author>Thomas Denewiler</author>
+  <maintainer email="tdenewiler@gmail.com">Thomas Denewiler</maintainer>
+  <license>BSD</license>
+  <url>https://github.com/tdenewiler/node_example</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+</package>  
   
+CMakeLists.txt的编写
+1：版本 cmake_minimum_required()
+2：包名 project()
+3：包依赖 find_package()
+4：add_message_files(), add_service_files(), add_action_files()
+5：generate_messages()  
+6：catkin_package()
+7：链接可执行文件 add_library()/add_executable()/target_link_libraries()
+8：gtest()  catkin_add_gtest()
+9: install()
+
+单元测试(ut)
+catkin_make run_tests_[package]
+
+roslaunch: 使用XML文件来说明应该被启动的节点,应该被设置的参数,以及其它一些启动节点的属性
+           XML文件的具体格式: http://wiki.ros.org/roslaunch/XML
 问题：
 实时显示一个发布到某个话题上的数据变化图形  rosrun rqt_plot rqt_plot
 

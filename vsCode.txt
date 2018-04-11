@@ -1,0 +1,16 @@
+主命令框 :	F1
+     按一下 Backspace 会进入到 Ctrl+P 模式
+	 在 Ctrl+P 下输入 > 可以进入 Ctrl+Shift+P 模式
+	 
+Ctrl+P 窗口下:
+	直接输入文件名，跳转到文件
+	? 列出当前可执行的动作
+	! 显示 Errors或 Warnings
+	: 跳转到行数，也可以 Ctrl+G 直接进入
+	@ 跳转到 symbol（搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入
+	# 根据名字查找 symbol，也可以 Ctrl+T
+
+文件之间切换 Ctrl+Tab
+变大：ctrl +
+左中右 3 个编辑器的快捷键 Ctrl+1 Ctrl+2 Ctrl+3
+代码行缩进 Ctrl+[ 、 Ctrl+]
