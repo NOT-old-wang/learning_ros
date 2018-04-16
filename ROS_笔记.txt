@@ -138,7 +138,7 @@ roslaunch [package]/launch/[***].launch
 
 sudo update-rc.d launch defaults 95    |  sudo update-rc.d -f launch remove
 
-12多机通讯：https://blog.csdn.net/shiyue0010/article/details/51924941
+13多机通讯：https://blog.csdn.net/shiyue0010/article/details/51924941
   修改/etc/hosts文件     例：192.168.0.50    ***-desktop
   重启网络： sudo /etc/init.d/networking restart
 实现电脑之间的通信 
@@ -181,7 +181,14 @@ catkin_make run_tests_[package]
 
 roslaunch: 使用XML文件来说明应该被启动的节点,应该被设置的参数,以及其它一些启动节点的属性
            XML文件的具体格式: http://wiki.ros.org/roslaunch/XML
-问题：
+		   
+		   
+tf: 使用一种树型数据结构，根据时间缓冲并维护多个参考系之间的坐标变换关系
+    全局参考系（world frame） 机器人中心参考系（base frame） 机械夹参考系（gripper frame） 机器人头参考系（head frame）
+    使用：1监听tf变换   2广播tf变换
+	显示整棵tf树的信息,可以生成pdf文件:rosrun tf view_frames  
+	查看指定参考系之间的变换关系:rosrun tf tf_echo <source_frame> <target_frame> 
+问题
 实时显示一个发布到某个话题上的数据变化图形  rosrun rqt_plot rqt_plot
 
 里面/turtle1/pose/x   /turtle1/pose/y  /turtle1/pose/theta 图里对应的参数是什么含义
