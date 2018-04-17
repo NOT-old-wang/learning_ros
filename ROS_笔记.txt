@@ -191,4 +191,6 @@ tf: 使用一种树型数据结构，根据时间缓冲并维护多个参考系之间的坐标变换关系
 问题
 实时显示一个发布到某个话题上的数据变化图形  rosrun rqt_plot rqt_plot
 
+rviz :/laser_link
+
 里面/turtle1/pose/x   /turtle1/pose/y  /turtle1/pose/theta 图里对应的参数是什么含义
