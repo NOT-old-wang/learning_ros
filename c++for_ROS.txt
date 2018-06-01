@@ -59,8 +59,26 @@ NodeHandle不允许直接将私有名称传递给它的方法，也不允许将N
 	ros::MultiThreadedSpiner     例：ros::MultiThreadedSpinner spinner(4); // Use 4 threads
 	                                 spinner.spin(); // spin() will not return until the node has been shutdown
 
-定时器 
-  创建：ros::NodeHandle::createTimer()
+定时器 时刻和间隔:ROS 中有 time 和 duration 两种类型，相应的有 ros::Time 和 ros::Duration 类
+                  time 表示的是时刻 | duration 表示的是时间间隔 
+ros::Time a_little_after_the_beginning(0.001);
+ros::Duration five_seconds(5.0);				  
+获得当前时间:ros::Time::now()    
+             ros::Time begin = ros::Time::now();
+时间与间隔的转化
+double secs =ros::Time::now().toSec();
+ros::Duration d(0.5);
+secs = d.toSec();	
+睡眠 0.5s: ros::Duration(0.5).sleep();	
+频率 10Hz:
+ros::Rate r(10); // 10 hz
+while (ros::ok())
+{
+  ... do some work ...
+  r.sleep();
+}
+			  
+创建：ros::NodeHandle::createTimer()
         ros::Timer ros::NodeHandle::createTimer(ros::Duration period, <callback>, bool oneshot = false);
         period:定义了定时器回调函数调用间隔,ros::Duration(0.1)定义了一个匿名类作为period参数,表示每隔0.1s调用一次定时器回调函数
 		<callback>:定时器回调函数,可以是一般函数,类成员方法,仿函数对象等等
@@ -71,6 +89,6 @@ NodeHandle不允许直接将私有名称传递给它的方法，也不允许将N
 	  ROS_DEBUG(...); ROS_DEBUG_STREAM(args);//这会输出到一个名叫ros.pkg_name的文件
 	  ROS_DEBUG_NAMED("m_name",...); ROS_DEBUG_STREAM_NAMED("m_name",args);//这会输出到一个名叫ros.pkg_name.m_name的文件
   
-  
-  
+ros::Rate对象允许你制定循环的频率  
+  ros::Rate loop_rate(10); 频率为10hz
   

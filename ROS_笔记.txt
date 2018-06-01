@@ -142,6 +142,8 @@ roslaunch [package]/launch/[***].launch
 
 sudo update-rc.d launch defaults 95    |  sudo update-rc.d -f launch remove
 
+
+
 13多机通讯：https://blog.csdn.net/shiyue0010/article/details/51924941
   修改/etc/hosts文件     例：192.168.0.50    ***-desktop
   重启网络： sudo /etc/init.d/networking restart
@@ -198,3 +200,12 @@ tf: 使用一种树型数据结构，根据时间缓冲并维护多个参考系之间的坐标变换关系
 rviz :/laser_link
 
 里面/turtle1/pose/x   /turtle1/pose/y  /turtle1/pose/theta 图里对应的参数是什么含义
+
+
+编译：catkin_make --pkg cotex_msgs
+编译所有的包 catkin_make
+编译一个包 camke [package]    make
+
+运行test
+
+catkin_make run_tests_[pack]

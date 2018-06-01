@@ -1,0 +1,110 @@
+系统：
+  查看IP：ifconfig
+  查看内核版本： uname -r
+  关机:   shutdown -h now
+  重启
+  命令补全: TAB键
+
+看PDF
+ evince [filename] 
+图片
+ eog
+  
+目录文件夹：
+  确定目录： pwd
+  进入目录:  cd ***
+  进入根目录：cd /          cd //进入主目录
+  当前目录下的文件： ls     ls -a 等
+  返回上此目录： cd -
+  上级目录：   cd ../
+  创建：mkdir ***
+  删除：rm -rf ***    //递归删除目录及其内容      rmdir //删除空文件夹         
+  移动更名： mv    
+  解压：tar -vcf xxx.tar.gz xxx 或 tar -vxf xxx.tar.gz
+
+安装：
+
+  
+vim文本编辑器:
+  hjkl代表左、下、上、右
+  命令模式：  ESC
+  编辑模式：  i
+  选中:       v
+  复制：      y        yy//行      y$//当前道末尾
+  粘贴放置：  p
+  删除:       d        dd//行
+  撤销操作：  u
+  保存：      w
+  退出：      q        q!//强制退出   wq //保存退出
+  一行开头：  0        $ //一行末尾
+  移动单词：  w        b //后退一单词
+  文件末尾：  G 
+  替换：      s 
+  新建文本：  vi ***
+  设置TAB键的长度： :set tabstop=4
+  开启自动缩进      :set autoindent   
+  停止缩进          ctrl+d
+  打开行号：        :set nu
+  多个文件(新增.c)  sp *.c(ctrl+w+s)  跳转(ctrl+w+上)
+
+安全：查找系统中admin普通用户的密码：cat /etc/shadow | grep "admin"
+GCC编译器:
+          gcc -lm //加入数学库
+          
+
+GDB调试器：gcc -g 1.c -o 1.o
+
+进程：
+    
+ 
+echo命令:用于字符串的输出
+  echo string
+  echo -e "OK! \n" # -e 开启转义
+显示结果定向至文件
+  echo "It is a test" > myfile
+
+查看性能：
+  mpstart-P ALL 5
+  lscpu
+  CPU :sar -u 1 5
+%us：表示用户空间程序的cpu使用率（没有通过nice调度）
+%sy：表示系
+统空间的cpu使用率，主要是内核程序。
+%ni：表示用户空间且通过nice调度过的程序的cpu使用率。
+%id：空闲cpu
+%wa：cpu运行时在等待io的时间
+%hi：cpu处理硬中断的数量
+%si：cpu处理软中断的数量
+%st：被虚拟机偷走的cpu
+
+dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
+
+ssh
+本地复制远程文件：（把远程的文件复制到本地）
+scp root@www.test.com:/val/test/test.tar.gz /val/test/test.tar.gz
+远程复制本地文件：（把本地的文件复制到远程主机上）
+scp /val/test.tar.gz root@www.test.com:/val/test.tar.gz
+本地复制远程目录：（把远程的目录复制到本地）
+scp -r root@www.test.com:/val/test/ /val/test/
+远程复制本地目录：（把本地的目录复制到远程主机上）
+scp -r ./ubuntu_env/ root@192.168.0.111:/home/pipi
+
+terminstor
+  垂直分割：ctrl+shift+e
+  水平分割：ctrl+shift_o
+  
+检查端口权限 ls -l /dev |grep ttyUSB
+设置端口权限666 sudo chmod 666 /dev/ttyUSB0
+
+查看boost安装版本：
+$ dpkg -S /usr/include/boost/version.hpp
+卸载boost:
+$ sudo apt-get autoremove package
+(注：package为要卸载的boost的名称 示例：sudo apt-get autoremove libboost1.55-dev)
+更新boost:
+$ sudo add-apt-repository ppa:boost-latest/ppa
+$ sudo apt-get update
+查看可安装的boost:
+$ aptitude search boost
+安装boost(以安装boost1.55示例):
+$ sudo apt-get install libboost1.55-dev
