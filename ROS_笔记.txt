@@ -8,6 +8,10 @@ ROS笔记
 读取当前catkin工作空间的环境变量：source devel/setup.sh 
 验证ROS工作空间的环境变量加载成功：echo $ROS_PACKAGE_PATH
 
+保存环境：echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+          source ~/.bashrc
+
+
 2 文件系统
 
 获取软件包的有关信息：rospack find [包名称]
@@ -19,7 +23,7 @@ ROS笔记
 3 软件包
 
 catkin软件包必要组成：package.xml和CMakeList.txt文件。
-创建catkin软件包：catkin_create_pkg命令创建一个新的catkin软件包。
+创建catkin软件包：catkin_create_pkg命令创建一个新的catkin软件包。  例：catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
 编译catkin工作空间：catkin_make命令编译catkin工作空间。
 查看ROS软件包依赖：rospack depends1[] 查看直接依赖，rospack depends[] 查看间接依赖。   
 定制catkin软件包：修改文件package.xml和CMakeLists.txt。
