@@ -132,3 +132,14 @@ sudo chmod -（代表类型）×××（所有者）×××（组用户）×××（其他用户）
 cd /sbin
 chmod u+s shutdown
 
+查看文件大小
+ls -alh
+
+linux 时间转化 date -d '2018-1-1 11:11' +%s
+当前时间 date +%s
+数字转化为时间：date -d "@214321" 
+
+
+
+tail -f
+
