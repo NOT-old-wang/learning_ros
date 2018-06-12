@@ -128,6 +128,7 @@ sudo chmod -（代表类型）×××（所有者）×××（组用户）×××（其他用户）
 
 7 [111] 读写执行权限
 
-
-
+修改shutdown的权限
+cd /sbin
+chmod u+s shutdown
 
