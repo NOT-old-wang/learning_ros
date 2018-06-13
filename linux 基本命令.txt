@@ -41,6 +41,8 @@ vim文本编辑器:
   文件末尾：  G 
   替换：      s 
   新建文本：  vi ***
+  刷新：e
+  查看当前文件：f
   设置TAB键的长度： :set tabstop=4
   开启自动缩进      :set autoindent   
   停止缩进          ctrl+d
@@ -141,5 +143,8 @@ linux 时间转化 date -d '2018-1-1 11:11' +%s
 
 
 
-tail -f
+tail -f + 文件 持续输出
+
+linux 编译boost库的程序
+g++ -I/usr/local/inlcude -L/usr/local/lib example.cpp -lboost_thread -o example -lboost_system
 
