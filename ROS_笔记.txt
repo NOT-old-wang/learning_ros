@@ -1,140 +1,140 @@
-ROS±Ê¼Ç 
+ROSç¬”è®° 
 
-1 ÅäÖÃ»·¾³
+1 é…ç½®ç¯å¢ƒ
 
-²é¿´»·¾³£ºexport | grep ROS
-³õÊ¼»¯ROSµÄcatkin¹¤×÷¿Õ¼ä£ºcatkin_init_workspace 
-±àÒëROSµÄcatkin¹¤×÷¿Õ¼ä£ºcatkin_make 
-¶ÁÈ¡µ±Ç°catkin¹¤×÷¿Õ¼äµÄ»·¾³±äÁ¿£ºsource devel/setup.sh 
-ÑéÖ¤ROS¹¤×÷¿Õ¼äµÄ»·¾³±äÁ¿¼ÓÔØ³É¹¦£ºecho $ROS_PACKAGE_PATH
+æŸ¥çœ‹ç¯å¢ƒï¼šexport | grep ROS
+åˆå§‹åŒ–ROSçš„catkinå·¥ä½œç©ºé—´ï¼šcatkin_init_workspace 
+ç¼–è¯‘ROSçš„catkinå·¥ä½œç©ºé—´ï¼šcatkin_make 
+è¯»å–å½“å‰catkinå·¥ä½œç©ºé—´çš„ç¯å¢ƒå˜é‡ï¼šsource devel/setup.sh 
+éªŒè¯ROSå·¥ä½œç©ºé—´çš„ç¯å¢ƒå˜é‡åŠ è½½æˆåŠŸï¼šecho $ROS_PACKAGE_PATH
 
-±£´æ»·¾³£ºecho "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+ä¿å­˜ç¯å¢ƒï¼šecho "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
           source ~/.bashrc
 
 
-2 ÎÄ¼şÏµÍ³
+2 æ–‡ä»¶ç³»ç»Ÿ
 
-»ñÈ¡Èí¼ş°üµÄÓĞ¹ØĞÅÏ¢£ºrospack find [°üÃû³Æ]
-Ö±½ÓÇĞ»»(cd)¹¤×÷Ä¿Â¼µ½Ä³¸öÈí¼ş°ü»òÕßÈí¼ş°ü¼¯µ±ÖĞ£ºroscd [±¾µØ°üÃû³Æ[/×ÓÄ¿Â¼]]
-ÂŞÁĞÄ¿Â¼ £ºrosls [±¾µØ°üÃû³Æ[/×ÓÄ¿Â¼]]
+è·å–è½¯ä»¶åŒ…çš„æœ‰å…³ä¿¡æ¯ï¼šrospack find [åŒ…åç§°]
+ç›´æ¥åˆ‡æ¢(cd)å·¥ä½œç›®å½•åˆ°æŸä¸ªè½¯ä»¶åŒ…æˆ–è€…è½¯ä»¶åŒ…é›†å½“ä¸­ï¼šroscd [æœ¬åœ°åŒ…åç§°[/å­ç›®å½•]]
+ç½—åˆ—ç›®å½• ï¼šrosls [æœ¬åœ°åŒ…åç§°[/å­ç›®å½•]]
 
-×¢Òâ£ºÓÉÓÚrospack¡¢roscd¡¢roslsÃüÁîĞĞ¹¤¾ß¶¼ÊÇÕë¶ÔROSÈí¼ş°ü½øĞĞµÄ£¬ËùÒÔÒ»¶¨Òª½«Òª²Ù×÷µÄÈí¼ş°ü¼ÓÈëµ½ROS_PACKAGE_PATH±äÁ¿ÖĞ¡£
+æ³¨æ„ï¼šç”±äºrospackã€roscdã€roslså‘½ä»¤è¡Œå·¥å…·éƒ½æ˜¯é’ˆå¯¹ROSè½¯ä»¶åŒ…è¿›è¡Œçš„ï¼Œæ‰€ä»¥ä¸€å®šè¦å°†è¦æ“ä½œçš„è½¯ä»¶åŒ…åŠ å…¥åˆ°ROS_PACKAGE_PATHå˜é‡ä¸­ã€‚
 
-3 Èí¼ş°ü
+3 è½¯ä»¶åŒ…
 
-catkinÈí¼ş°ü±ØÒª×é³É£ºpackage.xmlºÍCMakeList.txtÎÄ¼ş¡£
-´´½¨catkinÈí¼ş°ü£ºcatkin_create_pkgÃüÁî´´½¨Ò»¸öĞÂµÄcatkinÈí¼ş°ü¡£  Àı£ºcatkin_create_pkg beginner_tutorials std_msgs rospy roscpp
-±àÒëcatkin¹¤×÷¿Õ¼ä£ºcatkin_makeÃüÁî±àÒëcatkin¹¤×÷¿Õ¼ä¡£
-²é¿´ROSÈí¼ş°üÒÀÀµ£ºrospack depends1[] ²é¿´Ö±½ÓÒÀÀµ£¬rospack depends[] ²é¿´¼ä½ÓÒÀÀµ¡£   
-¶¨ÖÆcatkinÈí¼ş°ü£ºĞŞ¸ÄÎÄ¼şpackage.xmlºÍCMakeLists.txt¡£
+catkinè½¯ä»¶åŒ…å¿…è¦ç»„æˆï¼špackage.xmlå’ŒCMakeList.txtæ–‡ä»¶ã€‚
+åˆ›å»ºcatkinè½¯ä»¶åŒ…ï¼šcatkin_create_pkgå‘½ä»¤åˆ›å»ºä¸€ä¸ªæ–°çš„catkinè½¯ä»¶åŒ…ã€‚  ä¾‹ï¼šcatkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+ç¼–è¯‘catkinå·¥ä½œç©ºé—´ï¼šcatkin_makeå‘½ä»¤ç¼–è¯‘catkinå·¥ä½œç©ºé—´ã€‚
+æŸ¥çœ‹ROSè½¯ä»¶åŒ…ä¾èµ–ï¼šrospack depends1[] æŸ¥çœ‹ç›´æ¥ä¾èµ–ï¼Œrospack depends[] æŸ¥çœ‹é—´æ¥ä¾èµ–ã€‚   
+å®šåˆ¶catkinè½¯ä»¶åŒ…ï¼šä¿®æ”¹æ–‡ä»¶package.xmlå’ŒCMakeLists.txtã€‚
 
-×¢Òâ£ºÈí¼ş°üÃüÃû¹ßÀıÊÇ¡ªÒÔĞ¡Ğ´×ÖÄ¸¿ªÍ·£¬Ö»ÄÜ°üº¬Ğ¡Ğ´×ÖÄ¸ºÍÊı×ÖÒÔ¼°ÏÂ»®Ïß£¬²»·ûºÏ¹æÔòµÄÈí¼ş°üÃû³Æ½«²»ÄÜ±àÒëÍ¨¹ı¡£
+æ³¨æ„ï¼šè½¯ä»¶åŒ…å‘½åæƒ¯ä¾‹æ˜¯â€”ä»¥å°å†™å­—æ¯å¼€å¤´ï¼Œåªèƒ½åŒ…å«å°å†™å­—æ¯å’Œæ•°å­—ä»¥åŠä¸‹åˆ’çº¿ï¼Œä¸ç¬¦åˆè§„åˆ™çš„è½¯ä»¶åŒ…åç§°å°†ä¸èƒ½ç¼–è¯‘é€šè¿‡ã€‚
 
-4 ROS½Úµã
+4 ROSèŠ‚ç‚¹
 
-ÁĞ³ö»îÔ¾µÄ½Úµã£ºrosnode list
-·µ»Ø½ÚµãµÄĞÅÏ¢: rosnode info
-²é¿´½Úµã¹ØÏµÍ¼£ºrosrun rqt_graph rqt_graph
-ÔËĞĞÒ»¸ö¸ø¶¨Èí¼ş°üÖĞµÄ½Úµã:  rosrun [package_name] [node_name]
-Æô¶¯¶à¸ö½Úµã£º  roslunch 
+åˆ—å‡ºæ´»è·ƒçš„èŠ‚ç‚¹ï¼šrosnode list
+è¿”å›èŠ‚ç‚¹çš„ä¿¡æ¯: rosnode info
+æŸ¥çœ‹èŠ‚ç‚¹å…³ç³»å›¾ï¼šrosrun rqt_graph rqt_graph
+è¿è¡Œä¸€ä¸ªç»™å®šè½¯ä»¶åŒ…ä¸­çš„èŠ‚ç‚¹:  rosrun [package_name] [node_name]
+å¯åŠ¨å¤šä¸ªèŠ‚ç‚¹ï¼š  roslunch 
 
 5 ROS topics
 
-ÏÔÊ¾topic1ÉÏËù·¢²¼µÄÊı¾İ£ºrostopic echo topic1 
-ÁĞ³öµ±Ç°´¦ÓÚ¼¤»î×´Ì¬µÄtopicÁĞ±í£ºrostopic list -v 
-ÏÔÊ¾topic1µÄÊı¾İÀàĞÍ£ºrostopic type topic1 
-ÏÔÊ¾ÀàĞÍ¸ü¼ÓÏêÏ¸µÄĞÅÏ¢£ºrosmsg show type1 
-Ö±½ÓÏòÖ÷Ìâtopic1·¢²¼Êı¾İ£ºrostopic pub [topic1] [msg_type] [args] 
-ÏÔÊ¾Ö÷Ìâtopic1ÉÏÊı¾İµÄ·¢²¼ËÙÂÊ£ºrostopic hz [topic1]
+æ˜¾ç¤ºtopic1ä¸Šæ‰€å‘å¸ƒçš„æ•°æ®ï¼šrostopic echo topic1 
+åˆ—å‡ºå½“å‰å¤„äºæ¿€æ´»çŠ¶æ€çš„topicåˆ—è¡¨ï¼šrostopic list -v 
+æ˜¾ç¤ºtopic1çš„æ•°æ®ç±»å‹ï¼šrostopic type topic1 
+æ˜¾ç¤ºç±»å‹æ›´åŠ è¯¦ç»†çš„ä¿¡æ¯ï¼šrosmsg show type1 
+ç›´æ¥å‘ä¸»é¢˜topic1å‘å¸ƒæ•°æ®ï¼šrostopic pub [topic1] [msg_type] [args] 
+æ˜¾ç¤ºä¸»é¢˜topic1ä¸Šæ•°æ®çš„å‘å¸ƒé€Ÿç‡ï¼šrostopic hz [topic1]
 
 6 ROS service
 
-Ö÷Òª·ÖÎªROS·şÎñºÍ²ÎÊıÁ½¸ö²¿·Ö 
-·şÎñ£¬Ö÷ÒªÃüÁî¹¤¾ßÊÇrosservice£º 
-ÁĞ³öËùÓĞ·şÎñ£ºrosservice list 
-²é¿´·şÎñÀàĞÍ£ºrosservice type [service] 
-µ÷ÓÃ·şÎñ£ºrosservice call [service] [args]
+ä¸»è¦åˆ†ä¸ºROSæœåŠ¡å’Œå‚æ•°ä¸¤ä¸ªéƒ¨åˆ† 
+æœåŠ¡ï¼Œä¸»è¦å‘½ä»¤å·¥å…·æ˜¯rosserviceï¼š 
+åˆ—å‡ºæ‰€æœ‰æœåŠ¡ï¼šrosservice list 
+æŸ¥çœ‹æœåŠ¡ç±»å‹ï¼šrosservice type [service] 
+è°ƒç”¨æœåŠ¡ï¼šrosservice call [service] [args]
 
-²ÎÊı£¬Ö÷ÒªÃüÁî¹¤¾ßÊÇrosparam£º 
-ÉèÖÃ²ÎÊı£ºrosparam set [param] 
-»ñµÃ²ÎÊı£ºrosparam get [param] 
-Ğ´Èë²ÎÊı£ºrosparam dump [filename] [namespace] 
-ÔØÈë²ÎÊı£ºrosparam load [filename] [namespace]
+å‚æ•°ï¼Œä¸»è¦å‘½ä»¤å·¥å…·æ˜¯rosparamï¼š 
+è®¾ç½®å‚æ•°ï¼šrosparam set [param] 
+è·å¾—å‚æ•°ï¼šrosparam get [param] 
+å†™å…¥å‚æ•°ï¼šrosparam dump [filename] [namespace] 
+è½½å…¥å‚æ•°ï¼šrosparam load [filename] [namespace]
 
-7 Ê¹ÓÃrqt_consoleºÍroslaunch
+7 ä½¿ç”¨rqt_consoleå’Œroslaunch
 
-ÏÔÊ¾½ÚµãµÄÊä³öĞÅÏ¢£ºrosrun rqt_console rqt_console
-ÓÃÓÚÉèÖÃÊä³öĞÅÏ¢µÄÖØÒªĞÔµÈ¼¶£ºrosrun rqt_logger_level rqt_logger_level
+æ˜¾ç¤ºèŠ‚ç‚¹çš„è¾“å‡ºä¿¡æ¯ï¼šrosrun rqt_console rqt_console
+ç”¨äºè®¾ç½®è¾“å‡ºä¿¡æ¯çš„é‡è¦æ€§ç­‰çº§ï¼šrosrun rqt_logger_level rqt_logger_level
 '''
-rosparam set            ÉèÖÃ²ÎÊı
-rosparam get            »ñÈ¡²ÎÊı
-rosparam load           ´ÓÎÄ¼ş¶ÁÈ¡²ÎÊı
-rosparam dump           ÏòÎÄ¼şÖĞĞ´Èë²ÎÊı
-rosparam delete         É¾³ı²ÎÊı
-rosparam list           ÁĞ³ö²ÎÊıÃû
+rosparam set            è®¾ç½®å‚æ•°
+rosparam get            è·å–å‚æ•°
+rosparam load           ä»æ–‡ä»¶è¯»å–å‚æ•°
+rosparam dump           å‘æ–‡ä»¶ä¸­å†™å…¥å‚æ•°
+rosparam delete         åˆ é™¤å‚æ•°
+rosparam list           åˆ—å‡ºå‚æ•°å
 '''
-ÈÕÖ¾µÈ¼¶ËµÃ÷(¸ß->µÍ)
+æ—¥å¿—ç­‰çº§è¯´æ˜(é«˜->ä½)
 Fatal
 Error
 Warn
 Info
 Debug
 '''
-Ò»´ÎĞÔ´ò¿ªÔÚÒ»¸ölaunchÎÄ¼şÖĞ¶¨ÒåµÄËùÓĞ½Úµã£ºroslaunch [package] [launch.file] [args]
+ä¸€æ¬¡æ€§æ‰“å¼€åœ¨ä¸€ä¸ªlaunchæ–‡ä»¶ä¸­å®šä¹‰çš„æ‰€æœ‰èŠ‚ç‚¹ï¼šroslaunch [package] [launch.file] [args]
 
-8 ROS msgºÍsrv
+8 ROS msgå’Œsrv
 
-ĞŞ¸Äpackage.xmlÎÄ¼ş
- È·±£Ëü°üº¬Ò»ÏÂÁ½ÌõÓï¾ä:<build_depend>message_generation</build_depend>
+ä¿®æ”¹package.xmlæ–‡ä»¶
+ ç¡®ä¿å®ƒåŒ…å«ä¸€ä¸‹ä¸¤æ¡è¯­å¥:<build_depend>message_generation</build_depend>
                         <run_depend>message_runtime</run_depend>
-ĞŞ¸ÄCMakeist.txtÎÄ¼ş
-  1 ÔÚfind_packageº¯ÊıÖĞ¼ÓÈëmessage_generationÒÀÀµ
-  2 ÔÚcatkin_packageº¯ÊıÖĞ¼ÓÈëmessage_runtimeÒÀÀµ
-  3 ĞŞ¸Äadd_message_fileº¯Êı£¬Ìí¼ÓÈë×Ô¼º´´½¨µÄ.msgÎÄ¼ş,»òÕßÔÚadd_service_fileº¯ÊıÖĞÌí¼ÓÈë×Ô¼º´´½¨µÄsrvÎÄ¼ş
-  4 È·±£generate_messagesº¯Êı±»µ÷ÓÃÔËĞĞ£¬È¥µô×¢ÊÍ·ûºÅ#
-ÖØĞÂ±àÒëÉú³ÉÈí¼ş°ü
+ä¿®æ”¹CMakeist.txtæ–‡ä»¶
+  1 åœ¨find_packageå‡½æ•°ä¸­åŠ å…¥message_generationä¾èµ–
+  2 åœ¨catkin_packageå‡½æ•°ä¸­åŠ å…¥message_runtimeä¾èµ–
+  3 ä¿®æ”¹add_message_fileå‡½æ•°ï¼Œæ·»åŠ å…¥è‡ªå·±åˆ›å»ºçš„.msgæ–‡ä»¶,æˆ–è€…åœ¨add_service_fileå‡½æ•°ä¸­æ·»åŠ å…¥è‡ªå·±åˆ›å»ºçš„srvæ–‡ä»¶
+  4 ç¡®ä¿generate_messageså‡½æ•°è¢«è°ƒç”¨è¿è¡Œï¼Œå»æ‰æ³¨é‡Šç¬¦å·#
+é‡æ–°ç¼–è¯‘ç”Ÿæˆè½¯ä»¶åŒ…
 
-9 C++±àĞ´ROS
+9 C++ç¼–å†™ROS
 
-1 ÔÚÒ»¸öpackageÖĞĞÂ½¨srcÎÄ¼ş¼Ğ ¿ÉÔÚÆäÖĞ±àĞ´C++´úÂë
-2 ĞŞ¸ÄÔö¼ÓCMakeLists.txt 
-3 ±àÒëĞÂ½¨½Úµã  catkin_make
-4 ¿ÉÖ´ĞĞÎÄ¼şÌí¼Ó¶ÔÉú³ÉµÄÏûÏ¢ÎÄ¼şµÄÒÀÀµ£ºadd_dependencies([file] ${catkin_EXPORTED_TARGETS})
-5 ¼ìÑé´´½¨µÄ½Úµã roscore  rosrun [package_name] [file]
+1 åœ¨ä¸€ä¸ªpackageä¸­æ–°å»ºsrcæ–‡ä»¶å¤¹ å¯åœ¨å…¶ä¸­ç¼–å†™C++ä»£ç 
+2 ä¿®æ”¹å¢åŠ CMakeLists.txt 
+3 ç¼–è¯‘æ–°å»ºèŠ‚ç‚¹  catkin_make
+4 å¯æ‰§è¡Œæ–‡ä»¶æ·»åŠ å¯¹ç”Ÿæˆçš„æ¶ˆæ¯æ–‡ä»¶çš„ä¾èµ–ï¼šadd_dependencies([file] ${catkin_EXPORTED_TARGETS})
+5 æ£€éªŒåˆ›å»ºçš„èŠ‚ç‚¹ roscore  rosrun [package_name] [file]
 
-10 Â¼ÖÆÓë»Ø·ÅÊı¾İ
+10 å½•åˆ¶ä¸å›æ”¾æ•°æ®
 
-1 ´´½¨Ò»¸öbagÎÄ¼ş¼Ğ  mkdir ~/bag_files  cd ~/bag_files  
-2.1 ¼ÇÂ¼ËùÓĞµÄtopics   rosbag record -a
-2.2 ¼ÇÂ¼Ö¸¶¨µÄtopics   Àı:ros record -O subset /turtle1/cmd_vel /turtle1/pose
-3 ²é¿´bagÎÄ¼şµÄĞÅÏ¢  rosbag info <your bagfile>        Ò²¿ÉÒÔÓÃGUI: rqt_bag
-4 »Ø·Å rosbag play <your bagfile>        ¸½:-r 2 2±¶ËÙ¶È
+1 åˆ›å»ºä¸€ä¸ªbagæ–‡ä»¶å¤¹  mkdir ~/bag_files  cd ~/bag_files  
+2.1 è®°å½•æ‰€æœ‰çš„topics   rosbag record -a
+2.2 è®°å½•æŒ‡å®šçš„topics   ä¾‹:ros record -O subset /turtle1/cmd_vel /turtle1/pose
+3 æŸ¥çœ‹bagæ–‡ä»¶çš„ä¿¡æ¯  rosbag info <your bagfile>        ä¹Ÿå¯ä»¥ç”¨GUI: rqt_bag
+4 å›æ”¾ rosbag play <your bagfile>        é™„:-r 2 2å€é€Ÿåº¦
 
 11 roswtf
-ÓÃÀ´±àÒë»òÕßÍ¨ĞÅÖ®ÀàµÄÎÊÌâÀ§ÈÅµÄÊ±ºò £ºroswtf
-°²×°¼ì²é ÔËĞĞÊ±¼ì²é
+ç”¨æ¥ç¼–è¯‘æˆ–è€…é€šä¿¡ä¹‹ç±»çš„é—®é¢˜å›°æ‰°çš„æ—¶å€™ ï¼šroswtf
+å®‰è£…æ£€æŸ¥ è¿è¡Œæ—¶æ£€æŸ¥
 
-robot_upstartÊ¹ÓÃ±¸Íü
-°²×°  rosrun robot_upstart install --job SERVICE_NAME --user USER -logdir ~/catkin_ws/logs/
-      ³ÌĞò½«ÒÔSERVICE_NAMEµÄÏµÍ³serviceÆô¶¯ÔËĞĞ
-      ³ÌĞò½«±»ÃûÎªUSERµÄÓÃ»§Æô¶¯
-      ³ÌĞòÊä³öµÄÈÕÖ¾½«»á±£´æÔÚ~/catkin_ws/logsÄ¿Â¼ÏÂ
-Ğ¶ÔØ  rosrun robot_upstart uninstall SERVICE_NAME 
+robot_upstartä½¿ç”¨å¤‡å¿˜
+å®‰è£…  rosrun robot_upstart install --job SERVICE_NAME --user USER -logdir ~/catkin_ws/logs/
+      ç¨‹åºå°†ä»¥SERVICE_NAMEçš„ç³»ç»Ÿserviceå¯åŠ¨è¿è¡Œ
+      ç¨‹åºå°†è¢«åä¸ºUSERçš„ç”¨æˆ·å¯åŠ¨
+      ç¨‹åºè¾“å‡ºçš„æ—¥å¿—å°†ä¼šä¿å­˜åœ¨~/catkin_ws/logsç›®å½•ä¸‹
+å¸è½½  rosrun robot_upstart uninstall SERVICE_NAME 
 
-12¿ª»ú×ÔÆô¶¯
-·½·¨1£º
+12å¼€æœºè‡ªå¯åŠ¨
+æ–¹æ³•1ï¼š
 Robot_upstart:
 The robot_upstart package provides scripts which may be used to install and uninstall Ubuntu Linux upstart jobs which launch groups of roslaunch files.
-Õâ¸ö·½·¨¿ÉÄÜ½öÖ§³ÖUbuntu Linux¡£ËüÌá¹©scripteÀ´°²×°ºÍĞ¶ÔØËæ»úÆô¶¯µÄROS¹¤×÷¡£ ¿ÉÒÔÊ¹ÓÃroslaunchµÈ  
-°²×°£ºsudo apt-get install ros-kinetc-robot-upstart 
-ÉèÖÃ£ºrosrun robot_upstart install [package]/launch/[***].launch
-      rosrun robot_upstart uninstall serviceÃû
-service Æô¶¯ºÍÍ£Ö¹£º sudo service serviceÃû start
-                     sudo service serviceÃû stop
-²é¿´log:   sudo vi /var/log/upstart/[***].log
-·½·¨2£º
+è¿™ä¸ªæ–¹æ³•å¯èƒ½ä»…æ”¯æŒUbuntu Linuxã€‚å®ƒæä¾›scripteæ¥å®‰è£…å’Œå¸è½½éšæœºå¯åŠ¨çš„ROSå·¥ä½œã€‚ å¯ä»¥ä½¿ç”¨roslaunchç­‰  
+å®‰è£…ï¼šsudo apt-get install ros-kinetc-robot-upstart 
+è®¾ç½®ï¼šrosrun robot_upstart install [package]/launch/[***].launch
+      rosrun robot_upstart uninstall serviceå
+service å¯åŠ¨å’Œåœæ­¢ï¼š sudo service serviceå start
+                     sudo service serviceå stop
+æŸ¥çœ‹log:   sudo vi /var/log/upstart/[***].log
+æ–¹æ³•2ï¼š
 vi /etc/init.d/launch
-Ğ´Èë
+å†™å…¥
 #!bin/sh
 .  /opt/ros/indigo/setup.sh 
 .  /home/ubuntu/catkin_ws/devel/setup.sh 
@@ -144,14 +144,17 @@ sudo update-rc.d launch defaults 95    |  sudo update-rc.d -f launch remove
 
 
 
-13¶à»úÍ¨Ñ¶£ºhttps://blog.csdn.net/shiyue0010/article/details/51924941
-  ĞŞ¸Ä/etc/hostsÎÄ¼ş     Àı£º192.168.0.50    ***-desktop
-  ÖØÆôÍøÂç£º sudo /etc/init.d/networking restart
-ÊµÏÖµçÄÔÖ®¼äµÄÍ¨ĞÅ 
-  ×°ÉÏchrony°ü£¬ÊµÏÖÊ±¼äÍ¬²½£ºsudo apt-get install chrony
+13å¤šæœºé€šè®¯ï¼šhttps://blog.csdn.net/shiyue0010/article/details/51924941
+  ä¿®æ”¹/etc/hostsæ–‡ä»¶     ä¾‹ï¼š192.168.0.50    ***-desktop
+  é‡å¯ç½‘ç»œï¼š sudo /etc/init.d/networking restart
+å®ç°ç”µè„‘ä¹‹é—´çš„é€šä¿¡ 
+  è£…ä¸ŠchronyåŒ…ï¼Œå®ç°æ—¶é—´åŒæ­¥ï¼šsudo apt-get install chrony
 
-package.xmlµÄ±àĞ´:³ÌĞò°üµÄÃèÊöÎÄ¼ş
-Àı:
+
+å…¶ä»–
+
+package.xmlçš„ç¼–å†™:ç¨‹åºåŒ…çš„æè¿°æ–‡ä»¶
+ä¾‹:
 <package format="2">
   <name>node_example</name>
   <version>0.0.1</version>
@@ -171,41 +174,41 @@ package.xmlµÄ±àĞ´:³ÌĞò°üµÄÃèÊöÎÄ¼ş
   <depend>std_msgs</depend>
 </package>  
   
-CMakeLists.txtµÄ±àĞ´
-1£º°æ±¾ cmake_minimum_required()
-2£º°üÃû project()
-3£º°üÒÀÀµ find_package()
-4£ºadd_message_files(), add_service_files(), add_action_files()
-5£ºgenerate_messages()  
-6£ºcatkin_package()
-7£ºÁ´½Ó¿ÉÖ´ĞĞÎÄ¼ş add_library()/add_executable()/target_link_libraries()
-8£ºgtest()  catkin_add_gtest()
+CMakeLists.txtçš„ç¼–å†™
+1ï¼šç‰ˆæœ¬ cmake_minimum_required()
+2ï¼šåŒ…å project()
+3ï¼šåŒ…ä¾èµ– find_package()
+4ï¼šadd_message_files(), add_service_files(), add_action_files()
+5ï¼šgenerate_messages()  
+6ï¼šcatkin_package()
+7ï¼šé“¾æ¥å¯æ‰§è¡Œæ–‡ä»¶ add_library()/add_executable()/target_link_libraries()
+8ï¼šgtest()  catkin_add_gtest()
 9: install()
 
-µ¥Ôª²âÊÔ(ut)
+å•å…ƒæµ‹è¯•(ut)
 catkin_make run_tests_[package]
 
-roslaunch: Ê¹ÓÃXMLÎÄ¼şÀ´ËµÃ÷Ó¦¸Ã±»Æô¶¯µÄ½Úµã,Ó¦¸Ã±»ÉèÖÃµÄ²ÎÊı,ÒÔ¼°ÆäËüÒ»Ğ©Æô¶¯½ÚµãµÄÊôĞÔ
-           XMLÎÄ¼şµÄ¾ßÌå¸ñÊ½: http://wiki.ros.org/roslaunch/XML
+roslaunch: ä½¿ç”¨XMLæ–‡ä»¶æ¥è¯´æ˜åº”è¯¥è¢«å¯åŠ¨çš„èŠ‚ç‚¹,åº”è¯¥è¢«è®¾ç½®çš„å‚æ•°,ä»¥åŠå…¶å®ƒä¸€äº›å¯åŠ¨èŠ‚ç‚¹çš„å±æ€§
+           XMLæ–‡ä»¶çš„å…·ä½“æ ¼å¼: http://wiki.ros.org/roslaunch/XML
 		   
 		   
-tf: Ê¹ÓÃÒ»ÖÖÊ÷ĞÍÊı¾İ½á¹¹£¬¸ù¾İÊ±¼ä»º³å²¢Î¬»¤¶à¸ö²Î¿¼ÏµÖ®¼äµÄ×ø±ê±ä»»¹ØÏµ
-    È«¾Ö²Î¿¼Ïµ£¨world frame£© »úÆ÷ÈËÖĞĞÄ²Î¿¼Ïµ£¨base frame£© »úĞµ¼Ğ²Î¿¼Ïµ£¨gripper frame£© »úÆ÷ÈËÍ·²Î¿¼Ïµ£¨head frame£©
-    Ê¹ÓÃ£º1¼àÌıtf±ä»»   2¹ã²¥tf±ä»»
-	ÏÔÊ¾Õû¿ÃtfÊ÷µÄĞÅÏ¢,¿ÉÒÔÉú³ÉpdfÎÄ¼ş:rosrun tf view_frames  
-	²é¿´Ö¸¶¨²Î¿¼ÏµÖ®¼äµÄ±ä»»¹ØÏµ:rosrun tf tf_echo <source_frame> <target_frame> 
-ÎÊÌâ
-ÊµÊ±ÏÔÊ¾Ò»¸ö·¢²¼µ½Ä³¸ö»°ÌâÉÏµÄÊı¾İ±ä»¯Í¼ĞÎ  rosrun rqt_plot rqt_plot
+tf: ä½¿ç”¨ä¸€ç§æ ‘å‹æ•°æ®ç»“æ„ï¼Œæ ¹æ®æ—¶é—´ç¼“å†²å¹¶ç»´æŠ¤å¤šä¸ªå‚è€ƒç³»ä¹‹é—´çš„åæ ‡å˜æ¢å…³ç³»
+    å…¨å±€å‚è€ƒç³»ï¼ˆworld frameï¼‰ æœºå™¨äººä¸­å¿ƒå‚è€ƒç³»ï¼ˆbase frameï¼‰ æœºæ¢°å¤¹å‚è€ƒç³»ï¼ˆgripper frameï¼‰ æœºå™¨äººå¤´å‚è€ƒç³»ï¼ˆhead frameï¼‰
+    ä½¿ç”¨ï¼š1ç›‘å¬tfå˜æ¢   2å¹¿æ’­tfå˜æ¢
+	æ˜¾ç¤ºæ•´æ£µtfæ ‘çš„ä¿¡æ¯,å¯ä»¥ç”Ÿæˆpdfæ–‡ä»¶:rosrun tf view_frames  
+	æŸ¥çœ‹æŒ‡å®šå‚è€ƒç³»ä¹‹é—´çš„å˜æ¢å…³ç³»:rosrun tf tf_echo <source_frame> <target_frame> 
+é—®é¢˜
+å®æ—¶æ˜¾ç¤ºä¸€ä¸ªå‘å¸ƒåˆ°æŸä¸ªè¯é¢˜ä¸Šçš„æ•°æ®å˜åŒ–å›¾å½¢  rosrun rqt_plot rqt_plot
 
 rviz :/laser_link
 
-ÀïÃæ/turtle1/pose/x   /turtle1/pose/y  /turtle1/pose/theta Í¼Àï¶ÔÓ¦µÄ²ÎÊıÊÇÊ²Ã´º¬Òå
+é‡Œé¢/turtle1/pose/x   /turtle1/pose/y  /turtle1/pose/theta å›¾é‡Œå¯¹åº”çš„å‚æ•°æ˜¯ä»€ä¹ˆå«ä¹‰
 
 
-±àÒë£ºcatkin_make --pkg cotex_msgs
-±àÒëËùÓĞµÄ°ü catkin_make
-±àÒëÒ»¸ö°ü camke [package]    make
+ç¼–è¯‘ï¼šcatkin_make --pkg cotex_msgs
+ç¼–è¯‘æ‰€æœ‰çš„åŒ… catkin_make
+ç¼–è¯‘ä¸€ä¸ªåŒ… camke [package]    make
 
-ÔËĞĞtest
+è¿è¡Œtest
 
 catkin_make run_tests_[pack]
