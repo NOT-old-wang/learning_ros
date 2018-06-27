@@ -140,8 +140,7 @@ ls -alh
 linux 时间转化 date -d '2018-1-1 11:11' +%s
 当前时间 date +%s
 数字转化为时间：date -d "@214321" 
-
-
+修改linux时间：sudo date -s 06/27/2018    sudo date -s 17:55:55  避免重启失效 hwclock -w
 
 tail -f + 文件 持续输出
 
