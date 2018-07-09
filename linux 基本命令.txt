@@ -1,149 +1,151 @@
-ϵͳ��
-  �鿴IP��ifconfig
-  �鿴�ں˰汾�� uname -r
-  �ػ�:   shutdown -h now
-  ����
-  ���ȫ: TAB��
+系统：
+  查看IP：ifconfig
+  查看内核版本： uname -r
+  关机:   shutdown -h now
+  重启
+  命令补全: TAB键
 
-��PDF
+更新源
+vim /etc/apt/sources.list
+
+看PDF
  evince [filename] 
-ͼƬ
+图片
  eog
   
-Ŀ¼�ļ��У�
-  ȷ��Ŀ¼�� pwd
-  ����Ŀ¼:  cd ***
-  �����Ŀ¼��cd /          cd //������Ŀ¼
-  ��ǰĿ¼�µ��ļ��� ls     ls -a ��
-  �����ϴ�Ŀ¼�� cd -
-  �ϼ�Ŀ¼��   cd ../
-  ������mkdir ***
-  ɾ����rm -rf ***    //�ݹ�ɾ��Ŀ¼��������      rmdir //ɾ�����ļ���         
-  �ƶ������� mv    
-  ��ѹ��tar -vcf xxx.tar.gz xxx �� tar -vxf xxx.tar.gz
+目录文件夹：
+  确定目录： pwd
+  进入目录:  cd ***
+  进入根目录：cd /          cd //进入主目录
+  当前目录下的文件： ls     ls -a 等
+  返回上此目录： cd -
+  上级目录：   cd ../
+  创建：mkdir ***
+  删除：rm -rf ***    //递归删除目录及其内容      rmdir //删除空文件夹         
+  移动更名： mv    
+  解压：tar -vcf xxx.tar.gz xxx 或 tar -vxf xxx.tar.gz
 
-��װ��
+安装：
 
   
-vim�ı��༭��:
-  hjkl�������¡��ϡ���
-  ����ģʽ��  ESC
-  �༭ģʽ��  i
-  ѡ��:       v
-  ���ƣ�      y        yy//��      y$//��ǰ��ĩβ
-  ճ�����ã�  p
-  ɾ��:       d        dd//��
-  ����������  u
-  ���棺      w
-  �˳���      q        q!//ǿ���˳�   wq //�����˳�
-  һ�п�ͷ��  0        $ //һ��ĩβ
-  �ƶ����ʣ�  w        b //����һ����
-  �ļ�ĩβ��  G 
-  �滻��      s 
-  �½��ı���  vi ***
-  ˢ�£�e
-  �鿴��ǰ�ļ���f
-  ����TAB���ĳ��ȣ� :set tabstop=4
-  �����Զ�����      :set autoindent   
-  ֹͣ����          ctrl+d
-  ���кţ�        :set nu
-  ����ļ�(����.c)  sp *.c(ctrl+w+s)  ��ת(ctrl+w+��)
+vim文本编辑器:
+  hjkl代表左、下、上、右
+  命令模式：  ESC
+  编辑模式：  i
+  选中:       v
+  复制：      y        yy//行      y$//当前道末尾
+  粘贴放置：  p
+  删除:       d        dd//行
+  撤销操作：  u
+  保存：      w
+  退出：      q        q!//强制退出   wq //保存退出
+  一行开头：  0        $ //一行末尾
+  移动单词：  w        b //后退一单词
+  文件末尾：  G 
+  替换：      s 
+  新建文本：  vi ***
+  刷新：e
+  查看当前文件：f
+  设置TAB键的长度： :set tabstop=4
+  开启自动缩进      :set autoindent   
+  停止缩进          ctrl+d
+  打开行号：        :set nu
+  多个文件(新增.c)  sp *.c(ctrl+w+s)  跳转(ctrl+w+上)
 
-��ȫ������ϵͳ��admin��ͨ�û������룺cat /etc/shadow | grep "admin"
-GCC������:
-          gcc -lm //������ѧ��
+安全：查找系统中admin普通用户的密码：cat /etc/shadow | grep "admin"
+GCC编译器:
+          gcc -lm //加入数学库
           
 
-GDB��������gcc -g 1.c -o 1.o
+GDB调试器：gcc -g 1.c -o 1.o
 
-���̣�
-    
+进程：
  
-echo����:�����ַ��������
+echo命令:用于字符串的输出
   echo string
-  echo -e "OK! \n" # -e ����ת��
-��ʾ����������ļ�
+  echo -e "OK! \n" # -e 开启转义
+显示结果定向至文件
   echo "It is a test" > myfile
 
-�鿴���ܣ�
+查看性能：
   mpstart-P ALL 5
   lscpu
   CPU :sar -u 1 5
-%us����ʾ�û��ռ�����cpuʹ���ʣ�û��ͨ��nice���ȣ�
-%sy����ʾϵ
-ͳ�ռ��cpuʹ���ʣ���Ҫ���ں˳���
-%ni����ʾ�û��ռ���ͨ��nice���ȹ��ĳ����cpuʹ���ʡ�
-%id������cpu
-%wa��cpu����ʱ�ڵȴ�io��ʱ��
-%hi��cpu����Ӳ�жϵ�����
-%si��cpu�������жϵ�����
-%st���������͵�ߵ�cpu
+%us：表示用户空间程序的cpu使用率（没有通过nice调度）
+%sy：表示系
+统空间的cpu使用率，主要是内核程序。
+%ni：表示用户空间且通过nice调度过的程序的cpu使用率。
+%id：空闲cpu
+%wa：cpu运行时在等待io的时间
+%hi：cpu处理硬中断的数量
+%si：cpu处理软中断的数量
+%st：被虚拟机偷走的cpu
 
 dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
 
 ssh
-���ظ���Զ���ļ�������Զ�̵��ļ����Ƶ����أ�
+本地复制远程文件：（把远程的文件复制到本地）
 scp root@www.test.com:/val/test/test.tar.gz /val/test/test.tar.gz
-Զ�̸��Ʊ����ļ������ѱ��ص��ļ����Ƶ�Զ�������ϣ�
+远程复制本地文件：（把本地的文件复制到远程主机上）
 scp /val/test.tar.gz root@www.test.com:/val/test.tar.gz
-���ظ���Զ��Ŀ¼������Զ�̵�Ŀ¼���Ƶ����أ�
+本地复制远程目录：（把远程的目录复制到本地）
 scp -r root@www.test.com:/val/test/ /val/test/
-Զ�̸��Ʊ���Ŀ¼�����ѱ��ص�Ŀ¼���Ƶ�Զ�������ϣ�
+远程复制本地目录：（把本地的目录复制到远程主机上）
 scp -r ./ubuntu_env/ root@192.168.0.111:/home/pipi
 
 terminstor
-  ��ֱ�ָctrl+shift+e
-  ˮƽ�ָctrl+shift_o
+  垂直分割：ctrl+shift+e
+  水平分割：ctrl+shift_o
   
-���˿�Ȩ�� ls -l /dev |grep ttyUSB
-���ö˿�Ȩ��666 sudo chmod 666 /dev/ttyUSB0
+检查端口权限 ls -l /dev |grep ttyUSB
+设置端口权限666 sudo chmod 666 /dev/ttyUSB0
 
-�鿴boost��װ�汾��
+查看boost安装版本：
 $ dpkg -S /usr/include/boost/version.hpp
-ж��boost:
+卸载boost:
 $ sudo apt-get autoremove package
-(ע��packageΪҪж�ص�boost������ ʾ����sudo apt-get autoremove libboost1.55-dev)
-����boost:
+(注：package为要卸载的boost的名称 示例：sudo apt-get autoremove libboost1.55-dev)
+更新boost:
 $ sudo add-apt-repository ppa:boost-latest/ppa
 $ sudo apt-get update
-�鿴�ɰ�װ��boost:
+查看可安装的boost:
 $ aptitude search boost
-��װboost(�԰�װboost1.55ʾ��):
+安装boost(以安装boost1.55示例):
 $ sudo apt-get install libboost1.55-dev
 
 
-chmod�����������ʽ���÷����£� 
-sudo chmod 777 ������ ��ÿ���˶��ж���д�Լ�ִ�е�Ȩ�ޣ�
-sudo chmod 644 ������ ���������ж���д��Ȩ�ޣ����û�ֻ�ж���Ȩ�ޣ�
-sudo chmod -���������ͣ��������������ߣ������������û����������������û���
-��λ����ÿһλ����ʾһ���û����͵�Ȩ�����á�ȡֵ��0��7���������Ƶ�[000]~[111]��
+chmod整个命令的形式的用法如下： 
+sudo chmod 777 ××× （每个人都有读和写以及执行的权限）
+sudo chmod 644 ××× （所有者有读和写的权限，组用户只有读的权限）
+sudo chmod -（代表类型）×××（所有者）×××（组用户）×××（其他用户）
+三位数的每一位都表示一个用户类型的权限设置。取值是0～7，即二进制的[000]~[111]。
 
-�����λ�Ķ���������ÿһλ�ֱ��ʾ����д��ִ��Ȩ�ޡ�
+这个三位的二进制数的每一位分别表示读、写、执行权限。
 
-��000��ʾ����Ȩ�޾��ޣ���100��ʾֻ�������������Ǿ���������Ķ�Ӧ��
+如000表示三项权限均无，而100表示只读。这样，我们就有了下面的对应：
 
-0 [000] ���κ�Ȩ��
+0 [000] 无任何权限
 
-4 [100] ֻ��Ȩ��
+4 [100] 只读权限
 
-6 [110] ��дȨ��
+6 [110] 读写权限
 
-7 [111] ��дִ��Ȩ��
+7 [111] 读写执行权限
 
-�޸�shutdown��Ȩ��
+修改shutdown的权限
 cd /sbin
 chmod u+s shutdown
 
-�鿴�ļ���С
+查看文件大小
 ls -alh
 
-linux ʱ��ת�� date -d '2018-1-1 11:11' +%s
-��ǰʱ�� date +%s
-����ת��Ϊʱ�䣺date -d "@214321" 
-�޸�linuxʱ�䣺sudo date -s 06/27/2018    sudo date -s 17:55:55  ��������ʧЧ hwclock -w
+linux 时间转化 date -d '2018-1-1 11:11' +%s
+当前时间 date +%s
+数字转化为时间：date -d "@214321" 
+修改linux时间：sudo date -s 06/27/2018    sudo date -s 17:55:55  避免重启失效 hwclock -w
 
-tail -f + �ļ� �������
+tail -f + 文件 持续输出
 
-linux ����boost��ĳ���
+linux 编译boost库的程序
 g++ -I/usr/local/inlcude -L/usr/local/lib example.cpp -lboost_thread -o example -lboost_system
 
