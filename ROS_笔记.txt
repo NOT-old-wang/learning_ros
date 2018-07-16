@@ -209,6 +209,3 @@ rviz :/laser_link
 编译所有的包 catkin_make
 编译一个包 camke [package]    make
 
-运行test
-
-catkin_make run_tests_[pack]
