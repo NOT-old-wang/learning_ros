@@ -115,7 +115,7 @@ Debug
 安装检查 运行时检查
 
 robot_upstart使用备忘
-安装  rosrun robot_upstart install --job SERVICE_NAME --user USER -logdir ~/catkin_ws/logs/
+安装  rosrun robot_upstart install --job SERVICE_NAME --user USER -logdir ~/catkin_ws/logs/ +<xxx.launch>
       程序将以SERVICE_NAME的系统service启动运行
       程序将被名为USER的用户启动
       程序输出的日志将会保存在~/catkin_ws/logs目录下
