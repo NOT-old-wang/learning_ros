@@ -51,6 +51,8 @@ vim文本编辑器:
   停止缩进          ctrl+d
   打开行号：        :set nu
   多个文件(新增.c)  sp *.c(ctrl+w+s)  跳转(ctrl+w+上)
+  批量注释： ：v  + 方向键 选中需要注释的区域  control + v 进入列模式  按I进入编辑 结束后按两次esc 
+  批量取消： control + v 选中注释 按 d 
 
 安全：查找系统中admin普通用户的密码：cat /etc/shadow | grep "admin"
 GCC编译器:
