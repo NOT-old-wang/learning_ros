@@ -90,5 +90,20 @@ while (ros::ok())
 	  ROS_DEBUG_NAMED("m_name",...); ROS_DEBUG_STREAM_NAMED("m_name",args);//这会输出到一个名叫ros.pkg_name.m_name的文件
   
 ros::Rate对象允许你制定循环的频率  
-  ros::Rate loop_rate(10); 频率为10hz
+  roeos::Rate loop_rate(10); 频率为10hz
+  
+ROS 数据类型
+
+geometry_msgs:
+	geometry_msgs/Point      [float64 x  float64 y  float64 z]
+	geometry_msgs/Quaternion [float64 x  float64 y  float64 z  float64 z] 
+	geometry_msgs/Pose       [Point position  Quaternion orientation]
+	geometry_msgs/Pose2D     [float64 x  float64 y  float64 theta]
+	geometry_msgs/Vector3    [float64 x  float64 y  float64 z]
+	geometry_msgs/Twist      [Vector3 linear  Vector3 angular]
+
+nav_msgs:
+	nav_msgs/Odometry        [header  child_frame_id  geometry]
+	
+	
   
