@@ -151,3 +151,6 @@ tail -f + 文件 持续输出
 linux 编译boost库的程序
 g++ -I/usr/local/inlcude -L/usr/local/lib example.cpp -lboost_thread -o example -lboost_system
 
+卸载软件
+sudo apt-get autoremove --purge XXX
+
