@@ -45,6 +45,9 @@ Commands:
 </launch>
 （yaml文件的格式和使用方法：https://www.ibm.com/developerworks/cn/xml/x-1103linrr/）
 
+例：private_nh.param("enable_lidar", enableLidar_, true);
+param()函数从参数服务器取参数值给变量。如果无法获取，则将默认值赋给变量。这个函数的功能和getParam()函数类似，而区别是param()函数还提供了一个默认值。
+
 注意:似乎不能对全局节点和私有节点的参数同时初始化，所有尽量都使用私有节点来传递参数。 
 用launch文件初始化参数的优势是明显的，可以不查看源程序就可以知道节点用到的参数以及给定的初始值，并且找到一个合适的参数后，可以将它保存到launch文件而不必修改和重新编译源程序。	  
 
