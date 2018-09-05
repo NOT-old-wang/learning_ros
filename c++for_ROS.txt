@@ -91,7 +91,10 @@ while (ros::ok())
   
 ros::Rate对象允许你制定循环的频率  
   roeos::Rate loop_rate(10); 频率为10hz
-  
+
+ROS API
+http://wiki.ros.org/APIs
+
 ROS 数据类型
 
 geometry_msgs:
