@@ -43,6 +43,8 @@ Commands:
      <param name="int_param" value="999" />
   </node>
 </launch>
+（yaml文件的格式和使用方法：https://www.ibm.com/developerworks/cn/xml/x-1103linrr/）
+
 注意:似乎不能对全局节点和私有节点的参数同时初始化，所有尽量都使用私有节点来传递参数。 
 用launch文件初始化参数的优势是明显的，可以不查看源程序就可以知道节点用到的参数以及给定的初始值，并且找到一个合适的参数后，可以将它保存到launch文件而不必修改和重新编译源程序。	  
 
