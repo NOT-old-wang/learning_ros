@@ -60,37 +60,71 @@ NodeHandle不允许直接将私有名称传递给它的方法，也不允许将N
 	                                 spinner.spin(); // spin() will not return until the node has been shutdown
 
 定时器 时刻和间隔:ROS 中有 time 和 duration 两种类型，相应的有 ros::Time 和 ros::Duration 类
-                  time 表示的是时刻 | duration 表示的是时间间隔 
+int32 sec
+int32 nsec
+time 表示的是时刻 | duration 表示的是时间间隔 
+
 ros::Time a_little_after_the_beginning(0.001);
 ros::Duration five_seconds(5.0);				  
 获得当前时间:ros::Time::now()    
              ros::Time begin = ros::Time::now();
+	     
 时间与间隔的转化
 double secs =ros::Time::now().toSec();
 ros::Duration d(0.5);
 secs = d.toSec();	
 睡眠 0.5s: ros::Duration(0.5).sleep();	
-频率 10Hz:
-ros::Rate r(10); // 10 hz
-while (ros::ok())
+
+ros::Rate对象允许你制定循环的频率  
+ros::Rate rate(10); 频率为10hz
+例： 
+while(ros::ok())
 {
-  ... do some work ...
-  r.sleep();
+    ros::Rate rate(heartbeatFrequency_);
+    
+    ... do some work ...
+    
+    // sleep to make sure the heartbeat frequency
+    if (rate.cycleTime() > ros::Duration(1.0 / heartbeatFrequency_))
+    {
+        ROS_WARN("Heartbeat loop missed its desired rate of %.4fHz... the heartbeat actually took %.4f seconds",
+                 heartbeatFrequency_, rate.cycleTime().toSec());
+    }
+    
+    rate.sleep();
 }
+
 			  
 创建：ros::NodeHandle::createTimer()
         ros::Timer ros::NodeHandle::createTimer(ros::Duration period, <callback>, bool oneshot = false);
-        period:定义了定时器回调函数调用间隔,ros::Duration(0.1)定义了一个匿名类作为period参数,表示每隔0.1s调用一次定时器回调函数
-		<callback>:定时器回调函数,可以是一般函数,类成员方法,仿函数对象等等
-		oneshot:确定该定时器是一次性定时还是持续调用
-  通过ros::Rate 和 r.sleep函数配对实现
+	例：ros::Timer timer1 = n.createTimer(ros::Duration(1.0), callback1);
+        
+	period:定义了定时器回调函数调用间隔,ros::Duration(0.1)定义了一个匿名类作为period参数,表示每隔0.1s调用一次定时器回调函数
+	<callback>:定时器回调函数,可以是一般函数,类成员方法,仿函数对象等等
+	oneshot:确定该定时器是一次性定时还是持续调用
+	
+	void timerCallback(const ros::TimerEvent& e);
+        void callback1(const ros::TimerEvent&)
+        {
+     	    ROS_INFO("Callback 1 triggered");
+        }
+struct TimerEvent
+{
+   Time last_expected;                     ///< In a perfect world, this is when the last callback should have happened
+   Time last_real;                         ///< When the last callback actually happened
+   Time current_expected;                  ///< In a perfect world, this is when the current callback should be happening
+   Time current_real;                      ///< This is when the current callback was actually called (Time::now() as of the beginning of the callback)
+   struct
+   {
+     WallDuration last_duration;           ///< How long the last callback ran for, always in wall-clock time
+   } profile;
+ };
+  通过ros::Rate 和 ros.sleep函数配对实现
 
 日志： #include<ros/console.h>  
 	  ROS_DEBUG(...); ROS_DEBUG_STREAM(args);//这会输出到一个名叫ros.pkg_name的文件
 	  ROS_DEBUG_NAMED("m_name",...); ROS_DEBUG_STREAM_NAMED("m_name",args);//这会输出到一个名叫ros.pkg_name.m_name的文件
   
-ros::Rate对象允许你制定循环的频率  
-  roeos::Rate loop_rate(10); 频率为10hz
 
 ROS API
 http://wiki.ros.org/APIs
