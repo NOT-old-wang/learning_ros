@@ -175,7 +175,7 @@ package.xml的编写:程序包的描述文件
   <depend>std_msgs</depend>
 </package>  
   
-CMakeLists.txt的编写
+CMakeLists.txt的编写  :注意：add_dependencies需要在add_executable之后，taeget_link之前
 1：版本 cmake_minimum_required()
 2：包名 project()
 3：包依赖 find_package()
