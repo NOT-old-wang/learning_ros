@@ -46,6 +46,8 @@ catkin软件包必要组成：package.xml和CMakeList.txt文件。
 显示类型更加详细的信息：rosmsg show type1 
 直接向主题topic1发布数据：rostopic pub [topic1] [msg_type] [args] 
 显示主题topic1上数据的发布速率：rostopic hz [topic1]
+例：rostopic pub -r 20 /cmd_vel cotek_msgs/CmdVel "velocity: -0.1 omega: 0.0" 
+
 
 6 ROS service
 
