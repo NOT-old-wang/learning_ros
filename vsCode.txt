@@ -10,8 +10,11 @@ Ctrl+P 窗口下:
 	@ 跳转到 symbol（搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入
 	# 根据名字查找 symbol，也可以 Ctrl+T
 
+Mac的话将Ctrl -> commond
+
 新建文件：Ctrl + n
 打开多个编辑器： Ctrl + /
+关闭当前编辑器： Ctrl + w
 跳行： ctrl + g
 跳入函数：ctrl +  鼠标点击
 选中：ctrl + i(双击)
