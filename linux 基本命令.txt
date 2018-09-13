@@ -141,6 +141,11 @@ chmod u+s shutdown
 查看文件大小
 ls -alh
 
+打包
+tar -tvf 压缩包.tar [文件]
+解包
+tar -xf 压缩包.tar
+
 linux 时间转化 date -d '2018-1-1 11:11' +%s
 当前时间 date +%s
 数字转化为时间：date -d "@214321" 
