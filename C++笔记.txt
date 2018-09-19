@@ -1,3 +1,6 @@
+#pragma pack(0)的作用
+https://blog.csdn.net/vbLittleBoy/article/details/6935165
+
 c++中#pragma的用法
 格式一般为: #Pragma Para 
 1：#Pragma message(“消息文本”)   //编译时输出
